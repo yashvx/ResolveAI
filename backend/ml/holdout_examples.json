@@ -1,0 +1,31 @@
+[
+  {"message": "I cannot get into my profile even after resetting my password", "category": "Account"},
+  {"message": "The verification code for signing in never arrives", "category": "Account"},
+  {"message": "Please unlock my account so I can access my orders", "category": "Account"},
+  {"message": "My registered email address is no longer accessible", "category": "Account"},
+  {"message": "Someone changed my password without my permission", "category": "Account"},
+
+  {"message": "My card was charged but the transaction is still showing as failed", "category": "Payment"},
+  {"message": "I see two charges for one purchase on my bank statement", "category": "Payment"},
+  {"message": "The checkout will not accept my debit card", "category": "Payment"},
+  {"message": "My digital wallet payment remains pending", "category": "Payment"},
+  {"message": "The amount debited from my account is incorrect", "category": "Payment"},
+
+  {"message": "The seller approved my return but the money has not come back", "category": "Refund"},
+  {"message": "How long does it take to receive the money for a cancelled order", "category": "Refund"},
+  {"message": "The refund confirmation says completed but I have not received the funds", "category": "Refund"},
+  {"message": "I received less money back than the original purchase amount", "category": "Refund"},
+  {"message": "My refund request has been pending for several days", "category": "Refund"},
+
+  {"message": "The parcel is still in transit past the expected arrival date", "category": "Shipping"},
+  {"message": "The tracking link has not shown any movement since dispatch", "category": "Shipping"},
+  {"message": "My package was delivered to the wrong house", "category": "Shipping"},
+  {"message": "Can I reschedule when the courier brings my order", "category": "Shipping"},
+  {"message": "The order has not been shipped even though I placed it last week", "category": "Shipping"},
+
+  {"message": "The mobile application closes every time I tap the settings icon", "category": "Technical"},
+  {"message": "I receive a server error when trying to save my changes", "category": "Technical"},
+  {"message": "The website freezes whenever I submit the contact form", "category": "Technical"},
+  {"message": "The search function is returning an error instead of results", "category": "Technical"},
+  {"message": "I cannot upload a document because the application gets stuck", "category": "Technical"}
+]
