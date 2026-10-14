@@ -130,6 +130,40 @@ additional_tickets = [
     ("The courier attempted delivery at the wrong location", "Shipping"),
     ("I received a notification but my parcel is missing", "Shipping"),
     ("Can you check why my order has not shipped yet", "Shipping"),
+
+    # Day 3: additional examples for ambiguous customer language.
+    # Synthetic development examples; not real customer data.
+
+    # Account
+    ("The one-time password for my profile never reaches me", "Account"),
+    ("I am unable to regain access after my account was locked", "Account"),
+    ("My sign-in verification keeps rejecting the correct code", "Account"),
+    ("I need to recover the profile associated with my email", "Account"),
+
+    # Payment
+    ("My bank statement lists the same purchase more than once", "Payment"),
+    ("The total taken at checkout does not match the order amount", "Payment"),
+    ("My card transaction is marked unsuccessful despite a debit", "Payment"),
+    ("The payment receipt shows a charge I do not recognize", "Payment"),
+
+    # Refund
+    ("The merchant accepted my return but reimbursement is pending", "Refund"),
+    ("My cancellation was confirmed but the repayment is missing", "Refund"),
+    ("The amount returned to me is lower than expected", "Refund"),
+    ("I need an update on the money owed for my returned item", "Refund"),
+
+    # Shipping
+    ("The courier has postponed my delivery several times", "Shipping"),
+    ("My tracking status has not changed since the parcel left the warehouse", "Shipping"),
+    ("The delivery estimate passed and the order is still on the way", "Shipping"),
+    ("I need to arrange a different time for my parcel to arrive", "Shipping"),
+
+    # Technical
+    ("The application shows a blank page after I open a feature", "Technical"),
+    ("I receive an error when saving my profile changes", "Technical"),
+    ("The website stops responding when I submit a request", "Technical"),
+    ("The mobile app crashes while loading my dashboard", "Technical"),
+
 ]
 
 tickets.extend(additional_tickets)
