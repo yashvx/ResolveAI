@@ -61,7 +61,7 @@ The current model uses a scikit-learn pipeline with:
 3. **Logistic Regression** to predict the ticket category.
 4. **Prediction confidence** to identify cases that may need human review.
 
-The current training dataset contains 100 handcrafted synthetic examples across five categories. These examples are useful for demonstrating the workflow but do not represent a production dataset.
+The current training dataset contains 120 handcrafted synthetic examples across five categories. These examples are useful for demonstrating the workflow, but they do not represent a production dataset.
 
 The review threshold is currently set to `0.55`. It is provisional and should be evaluated and calibrated on representative validation data before real-world use. Model confidence is not automatically a calibrated probability of correctness.
 
@@ -105,7 +105,7 @@ cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install fastapi "uvicorn[standard]" scikit-learn pandas SQLAlchemy pydantic pytest httpx joblib
+python -m pip install -r requirements.txt
 PYTHONPATH=. python -m uvicorn app.main:app --reload
 ```
 
@@ -139,7 +139,19 @@ source .venv/bin/activate
 PYTHONPATH=. python -m pytest -q tests/
 ```
 
-### 5. Retrain the model
+### 5. Evaluate the model
+
+From the backend directory, with the virtual environment activated:
+
+Run `PYTHONPATH=.:ml python ml/evaluate_confidence.py` to evaluate confidence and classification performance.
+
+Run `PYTHONPATH=.:ml python ml/evaluate_holdout.py` to evaluate the first synthetic holdout dataset.
+
+Run `PYTHONPATH=.:ml python ml/evaluate_calibration.py` to inspect confidence calibration and review-threshold trade-offs.
+
+A second manually authored dataset is available at `ml/holdout_examples_day6.json`. It produced 25 correct predictions out of 25 in the recorded evaluation. This small synthetic result does not establish expected real-world accuracy. Calibration and threshold results are exploratory.
+
+### 6. Retrain the model
 
 From the backend directory, with the virtual environment activated:
 
