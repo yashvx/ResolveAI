@@ -122,3 +122,46 @@ def test_analytics_counts_created_ticket(client):
     assert data["open_tickets"] == 1
     assert data["high_priority_tickets"] == 1
     assert sum(data["categories"].values()) == 1
+
+
+@pytest.mark.parametrize(
+    ("confidence", "expected_review"),
+    [
+        (0.54, True),
+        (0.55, False),
+    ],
+)
+def test_predict_api_review_threshold(
+    client,
+    monkeypatch,
+    confidence,
+    expected_review,
+):
+    import numpy as np
+    from app import main
+
+    class FakeModel:
+        classes_ = [
+            "Account", "Payment", "Refund", "Shipping", "Technical"
+        ]
+
+        def predict_proba(self, messages):
+            return np.array([[
+                confidence,
+                (1 - confidence) / 4,
+                (1 - confidence) / 4,
+                (1 - confidence) / 4,
+                (1 - confidence) / 4,
+            ]])
+
+    monkeypatch.setattr(main, "model", FakeModel())
+
+    response = client.post(
+        "/predict",
+        json={"message": "Example support ticket"},
+    )
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["needs_review"] is expected_review
+    assert data["confidence"] == confidence
