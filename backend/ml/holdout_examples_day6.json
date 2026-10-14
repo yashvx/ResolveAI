@@ -1,0 +1,31 @@
+[
+  {"message": "The password reset link says it has expired", "category": "Account"},
+  {"message": "I cannot verify my identity to sign into my profile", "category": "Account"},
+  {"message": "My account was suspended and I need access restored", "category": "Account"},
+  {"message": "The email linked to my login is no longer mine", "category": "Account"},
+  {"message": "Someone is trying to sign in to my customer profile", "category": "Account"},
+
+  {"message": "My bank approved the purchase but the checkout still says unpaid", "category": "Payment"},
+  {"message": "The card terminal charged me but gave an unsuccessful message", "category": "Payment"},
+  {"message": "I need a receipt for the transaction on my order", "category": "Payment"},
+  {"message": "My wallet balance decreased after a failed checkout", "category": "Payment"},
+  {"message": "The payment page rejects my credit card details", "category": "Payment"},
+
+  {"message": "The refund was promised last week but nothing reached my bank", "category": "Refund"},
+  {"message": "I returned the item and want to know when I will be reimbursed", "category": "Refund"},
+  {"message": "The cancellation is complete but the money has not been returned", "category": "Refund"},
+  {"message": "Only part of the refund appeared in my account", "category": "Refund"},
+  {"message": "Where can I check the progress of my reimbursement request", "category": "Refund"},
+
+  {"message": "The courier marked my parcel delivered but I cannot find it", "category": "Shipping"},
+  {"message": "My order is still waiting to be dispatched", "category": "Shipping"},
+  {"message": "The tracking page says the parcel is at a sorting centre", "category": "Shipping"},
+  {"message": "I received a delivery date change notification", "category": "Shipping"},
+  {"message": "The package arrived damaged during transport", "category": "Shipping"},
+
+  {"message": "The app closes immediately after I sign in", "category": "Technical"},
+  {"message": "Clicking the save button does not store my changes", "category": "Technical"},
+  {"message": "The website keeps displaying an unexpected error page", "category": "Technical"},
+  {"message": "The search results never finish loading", "category": "Technical"},
+  {"message": "I cannot attach a file because the upload gets stuck", "category": "Technical"}
+]
